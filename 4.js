@@ -1,23 +1,22 @@
-function addition(a, b) {
-    'use strict';
-    return (a + b);
-}
-console.log(addition(10, 4));
+'use strict';
 
-function subtraction(a, b) {
-    'use strict';
-    return (a - b);
-}
-console.log(subtraction(10, 4));
+const products = [
+    {
+        id: 3,
+        price: 200,
+ },
+    {
+        id: 4,
+        price: 900,
+ },
+    {
+        id: 1,
+        price: 1000,
+ },
+ ];
 
-function division(a, b) {
-    'use strict';
-    return (a / b);
-}
-console.log(division(42, 3));
+products.forEach(item => {
+    item.price = item.price * 0.85;
+});
 
-function multiplication(a, b) {
-    'use strict';
-    return (a * b);
-}
-console.log(multiplication(4, 7));
+console.log(products);

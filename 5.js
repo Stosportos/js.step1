@@ -1,44 +1,34 @@
-function addition(a, b) {
-    'use strict';
-    return (a + b);
-}
-console.log(addition(10, 4));
+'use strict';
 
-function subtraction(a, b) {
-    'use strict';
-    return (a - b);
-}
-console.log(subtraction(10, 4));
+const products = [
+    {
+        id: 3,
+        price: 127,
+        photos: [
+ "1.jpg",
+ "2.jpg",
+ ]
+ },
+    {
+        id: 5,
+        price: 499,
+        photos: []
+ },
+    {
+        id: 10,
+        price: 26,
+        photos: [
+ "3.jpg"
+ ]
+ },
+    {
+        id: 8,
+        price: 78,
+ },
+];
 
-function division(a, b) {
-    'use strict';
-    return (a / b);
-}
-console.log(division(42, 3));
-
-function multiplication(a, b) {
-    'use strict';
-    return (a * b);
-}
-console.log(multiplication(4, 7));
-
-function mathOperation(arg1, arg2, operation) {
-    switch (operation) {
-        case "+":
-            return addition (arg1, arg2);
-        case "-":
-            return subtraction (arg1, arg2);
-        case "/":
-            return division (arg1, arg2);
-        case "*": 
-            return multiplication (arg1, arg2);
-        default:
-            throw new Error ("Unknown operation: " + operation);
-    }
-}
-
-console.log(mathOperation(42, 3, "+"));
-console.log(mathOperation(42, 3, "-"));
-console.log(mathOperation(42, 3, "/"));
-console.log(mathOperation(42, 3, "*"));
-console.log(mathOperation(42, 3, "|"));
+const result = products.filter(item => "photos" in item && item.photos.length > 0);
+console.log(result);
+const sorted = products.sort(function(item1, item2) {
+    return item1.price - item2.price;
+})
